@@ -10,140 +10,270 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Home'),
       ),
       body: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            const SizedBox(
-              height: 40,
-            ),
-            ClipPath(
-              clipper: BackgroundClipperOne(),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.4,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/skating_demo.jpg'),
-                    fit: BoxFit.cover,
+          height: double.infinity,
+          width: double.infinity,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const SizedBox(
+                  height: 40,
+                ),
+                ClipPath(
+                  clipper: BackgroundClipperOne(),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/skating_demo.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Container(
+                      color: Colors.black.withOpacity(.6),
+                      child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            // Align widgets to the left
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // Align widgets to the left horizontally
+                            children: [
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              const Text(
+                                "Don't have any\nSkate Shoes?",
+                                style: TextStyle(
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              OutlinedButton.icon(
+                                icon: const Text(
+                                  "Choose from here",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                onPressed: () {},
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: Colors.white,
+                                  side: const BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      12.0,
+                                    ), // Change the border radius here
+                                  ),
+                                ),
+                                label: const Icon(Icons.arrow_forward),
+                              )
+                            ],
+                          )),
+                    ),
                   ),
                 ),
-                child: Container(
-                  color: Colors.black.withOpacity(.6),
-                  child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        // Align widgets to the left
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        // Align widgets to the left horizontally
-                        children: [
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          const Text(
-                            "Don't have any\nSkate Shoes?",
-                            style: TextStyle(
-                              fontSize: 34,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          OutlinedButton.icon(
-                            icon: const Text(
-                              "Choose from here",
-                              style: TextStyle(
-                                fontSize: 14,
+                ClipPath(
+                  clipper: BackgroundClipperTwo(),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/skating_demo_2.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Container(
+                      color: Colors.black.withOpacity(.6),
+                      child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            // Align widgets to the left
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            // Align widgets to the left horizontally
+                            children: [
+                              const Text(
+                                "Are you new\nin Skating?",
+                                textAlign: TextAlign.end,
+                                style: TextStyle(
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
-                            ),
-                            onPressed: () {},
-                            style: OutlinedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              side: const BorderSide(
-                                color: Colors.white,
+                              const SizedBox(
+                                height: 10,
                               ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                  12.0,
-                                ), // Change the border radius here
+                              OutlinedButton.icon(
+                                icon: const Text(
+                                  "Try our tutorials",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                onPressed: () {},
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: Colors.white,
+                                  side: const BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      12.0,
+                                    ), // Change the border radius here
+                                  ),
+                                ),
+                                label: const Icon(Icons.arrow_forward),
                               ),
-                            ),
-                            label: const Icon(Icons.arrow_forward),
-                          )
-                        ],
-                      )),
-                ),
-              ),
-            ),
-            ClipPath(
-              clipper: BackgroundClipperTwo(),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: MediaQuery.of(context).size.height * 0.4,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/skating_demo_2.jpg'),
-                    fit: BoxFit.cover,
+                              const SizedBox(
+                                height: 30,
+                              ),
+                            ],
+                          )),
+                    ),
                   ),
                 ),
-                child: Container(
-                  color: Colors.black.withOpacity(.6),
-                  child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        // Align widgets to the left
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        // Align widgets to the left horizontally
-                        children: [
-                          const Text(
-                            "Are you new\nin Skating?",
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
-                              fontSize: 34,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          OutlinedButton.icon(
-                            icon: const Text(
-                              "Try our tutorials",
-                              style: TextStyle(
-                                fontSize: 14,
-                              ),
-                            ),
-                            onPressed: () {},
-                            style: OutlinedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              side: const BorderSide(
-                                color: Colors.white,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                  12.0,
-                                ), // Change the border radius here
-                              ),
-                            ),
-                            label: const Icon(Icons.arrow_forward),
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                        ],
-                      )),
+                const SizedBox(
+                  height: 40,
                 ),
-              ),
-            )
-          ],
-        ),
-      ),
+                ClipPath(
+                  clipper: BackgroundClipperOne(),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/skating_demo_3.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Container(
+                      color: Colors.black.withOpacity(.6),
+                      child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            // Align widgets to the left
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // Align widgets to the left horizontally
+                            children: [
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              const Text(
+                                "Are you not a member?",
+                                style: TextStyle(
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              OutlinedButton.icon(
+                                icon: const Text(
+                                  "Join now",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                onPressed: () {},
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: Colors.white,
+                                  side: const BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      12.0,
+                                    ), // Change the border radius here
+                                  ),
+                                ),
+                                label: const Icon(Icons.arrow_forward),
+                              )
+                            ],
+                          )),
+                    ),
+                  ),
+                ),
+                ClipPath(
+                  clipper: BackgroundClipperTwo(),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/skating_demo_4.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Container(
+                      color: Colors.black.withOpacity(.6),
+                      child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            // Align widgets to the left
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            // Align widgets to the left horizontally
+                            children: [
+                              const Text(
+                                "Discuss with professionals?",
+                                textAlign: TextAlign.end,
+                                style: TextStyle(
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              OutlinedButton.icon(
+                                icon: const Text(
+                                  "Call us",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                onPressed: () {},
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: Colors.white,
+                                  side: const BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      12.0,
+                                    ), // Change the border radius here
+                                  ),
+                                ),
+                                label: const Icon(Icons.arrow_forward),
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                            ],
+                          )),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+              ],
+            ),
+          )),
     );
   }
 }

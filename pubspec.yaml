@@ -65,6 +65,8 @@ flutter:
     - assets/images/splash.gif
     - assets/images/skating_demo.jpg
     - assets/images/skating_demo_2.jpg
+    - assets/images/skating_demo_3.jpg
+    - assets/images/skating_demo_4.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
