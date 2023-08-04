@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             const SizedBox(
               height: 40,
@@ -30,15 +31,50 @@ class HomeScreen extends StatelessWidget {
                 ),
                 child: Container(
                   color: Colors.black.withOpacity(.6),
-                  child: const Padding(
-                      padding: EdgeInsets.all(20),
-                      child: Text(
-                        "Don't have any\nSkate Shoes?",
-                        style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                  child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        // Align widgets to the left
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // Align widgets to the left horizontally
+                        children: [
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          const Text(
+                            "Don't have any\nSkate Shoes?",
+                            style: TextStyle(
+                              fontSize: 34,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          OutlinedButton.icon(
+                            icon: const Text(
+                              "Choose from here",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              side: const BorderSide(
+                                color: Colors.white,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                  12.0,
+                                ), // Change the border radius here
+                              ),
+                            ),
+                            label: const Icon(Icons.arrow_forward),
+                          )
+                        ],
                       )),
                 ),
               ),
@@ -49,7 +85,59 @@ class HomeScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.height * 0.4,
                 decoration: const BoxDecoration(
-                  color: Colors.red,
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/skating_demo_2.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Container(
+                  color: Colors.black.withOpacity(.6),
+                  child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        // Align widgets to the left
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        // Align widgets to the left horizontally
+                        children: [
+                          const Text(
+                            "Are you new\nin Skating?",
+                            textAlign: TextAlign.end,
+                            style: TextStyle(
+                              fontSize: 34,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          OutlinedButton.icon(
+                            icon: const Text(
+                              "Try our tutorials",
+                              style: TextStyle(
+                                fontSize: 14,
+                              ),
+                            ),
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              side: const BorderSide(
+                                color: Colors.white,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                  12.0,
+                                ), // Change the border radius here
+                              ),
+                            ),
+                            label: const Icon(Icons.arrow_forward),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                        ],
+                      )),
                 ),
               ),
             )
