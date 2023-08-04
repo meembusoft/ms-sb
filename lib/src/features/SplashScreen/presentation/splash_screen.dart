@@ -61,11 +61,11 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(context) {
-    // Timer(
-    //     const Duration(seconds: 5),
-    //         () =>
-    //         Navigator.of(context).pushReplacement(MaterialPageRoute(
-    //             builder: (BuildContext context) => const HomeScreen())));
+    Timer(
+        const Duration(seconds: 5),
+            () =>
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (BuildContext context) => const HomeScreen())));
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.dark
